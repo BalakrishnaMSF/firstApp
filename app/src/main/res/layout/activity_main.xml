@@ -28,8 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
-        android:padding="25dp"
-        android:background="@drawable/drawable_ex">
+        android:padding="25dp">
 
         <EditText
             android:id="@+id/username"
