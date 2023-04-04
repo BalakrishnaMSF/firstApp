@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyFirstApplication</string>
+    <string name="enter_user_name">Enter User Name</string>
+</resources>
