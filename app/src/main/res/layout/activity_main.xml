@@ -16,62 +16,62 @@
         android:textSize="64sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="cursive"
+        />
 
     <LinearLayout
-        android:id="@+id/login_linear"
+        android:id="@+id/login_relative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
         android:gravity="center"
         android:padding="25dp"
         android:background="@drawable/drawable_ex">
-
         <EditText
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/enter_user_name"
+            android:fontFamily="serif"
             />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter Password"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:hint="@string/enter_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="monospace"/>
 
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"/>
+            android:text="@string/login"/>
 
         <TextView
             android:id="@+id/forget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forget Password" />
+            android:text="@string/forget_password"
+            android:fontFamily="sans-serif-black"/>
+
 
     </LinearLayout>
-
-
-
-
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Don't have account. Sing up? "
+        android:text="@string/don_t_have_account_sing_up"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_linear" />
+        app:layout_constraintTop_toBottomOf="@+id/login_relative"
+        android:fontFamily="serif"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
