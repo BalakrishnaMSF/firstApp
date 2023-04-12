@@ -29,33 +29,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:padding="25dp"
-        android:background="@drawable/drawable_ex">
+        android:background="@color/purple_200">
 
         <EditText
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/enter_user_name"
+            android:textSize="24dp"
             />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter Password"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:hint="@string/enter_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="24dp"
+            />
 
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"/>
+            android:text="@string/login"/>
 
         <TextView
             android:id="@+id/forget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forget Password" />
+            android:text="@string/forget_password" />
 
     </LinearLayout>
 
@@ -68,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Don't have account. Sing up? "
+        android:text="@string/don_t_have_account_sing_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
