@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="enter_user_name">Enter User Name</string>
+    <string name="login">Login</string>
+    <string name="welcome_fragment">Welcome Fragment</string>
 </resources>
