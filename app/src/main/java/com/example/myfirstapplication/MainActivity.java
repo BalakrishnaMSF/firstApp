@@ -19,29 +19,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loginButton = findViewById(R.id.login);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                loginButton.setVisibility(View.GONE);
-                Fragment fragment=new FragmentOne();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.frameLayout,fragment).commit();
-            }
-        });
 
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
         AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
         builder.setMessage("Do you want to exit ?");
         builder.setTitle("Alert !");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+            //super.onBackPressed();
+            finish();
         });
+
         builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+            dialog.cancel();
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
