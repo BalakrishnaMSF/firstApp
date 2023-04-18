@@ -3,4 +3,5 @@
     <string name="enter_user_name">Enter User Name</string>
     <string name="login">Login</string>
     <string name="welcome_fragment">Welcome Fragment</string>
+    <string name="logout">LogOut</string>
 </resources>
