@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="submit">submit</string>
 </resources>
