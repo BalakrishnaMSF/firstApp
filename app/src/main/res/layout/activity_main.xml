@@ -29,12 +29,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:padding="25dp"
-        android:background="@drawable/drawable_ex">
+        android:background="@color/purple_200">
 
         <EditText
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:hint="@string/enter_user_name"
             />
 
@@ -43,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Enter Password"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
