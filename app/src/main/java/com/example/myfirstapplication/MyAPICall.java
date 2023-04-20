@@ -10,8 +10,8 @@ public interface MyAPICall {
 
 
 
-    @GET("/posts")
-    Call<List<DataModel>> getData();
+    @GET("posts/1{id}")
+    Call<DataModel> getData();
 
 
 }

@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
         MyAPICall myAPICall = retrofit.create(MyAPICall.class);
 
 
-        Call<List<DataModel>> call = myAPICall.getData();
+        Call<DataModel>call = myAPICall.getData();
 
-        call.enqueue(new Callback<List<DataModel>>() {
+        call.enqueue(new Callback<DataModel>() {
             @Override
-            public void onResponse(Call<List<DataModel>> call, Response<List<DataModel>> response) {
+            public void onResponse(Call<DataModel> call, Response<DataModel> response) {
                 Toast.makeText(MainActivity.this, "Logged", Toast.LENGTH_SHORT).show();
                 if(response.code() != 200){
                     txt.setText("Check the connection");
@@ -59,16 +59,13 @@ public class MainActivity extends AppCompatActivity {
                 String json = "";
 
                 assert response.body() != null;
-                json = "ID= "+ response.body()+
-                        "\n userID= "+ response.body()+
-                        "\n title= "+ response.body()+
-                        "\n body= "+ response.body();
+                json = "userId= "+ response.body().getUserId();
 
                 txt.append(json);
             }
 
             @Override
-            public void onFailure(Call<List<DataModel>> call, Throwable t) {
+            public void onFailure(Call<DataModel> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Not Logged", Toast.LENGTH_SHORT).show();
             }
         });
