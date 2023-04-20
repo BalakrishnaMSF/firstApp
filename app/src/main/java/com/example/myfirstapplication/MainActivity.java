@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt = findViewById(R.id.login);
+        txt = findViewById(R.id.hello);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 txt.append(json);
 
 
-
             }
+
 
             @Override
             public void onFailure(Call<DataModel> call, Throwable t) {
