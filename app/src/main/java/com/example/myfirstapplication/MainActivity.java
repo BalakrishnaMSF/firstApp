@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,20 +27,30 @@ public class MainActivity extends AppCompatActivity {
 
         txt = findViewById(R.id.hello);
 
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
                 .build();
 
 
         MyAPICall myAPICall = retrofit.create(MyAPICall.class);
 
 
-        Call<DataModel> call = myAPICall.getData();
+        Call<List<DataModel>> call = myAPICall.getData();
 
-        call.enqueue(new Callback<DataModel>() {
+        call.enqueue(new Callback<List<DataModel>>() {
             @Override
-            public void onResponse(Call<DataModel> call, Response<DataModel> response) {
+            public void onResponse(Call<List<DataModel>> call, Response<List<DataModel>> response) {
+                Toast.makeText(MainActivity.this, "Logged", Toast.LENGTH_SHORT).show();
                 if(response.code() != 200){
                     txt.setText("Check the connection");
                     return;
@@ -43,23 +58,21 @@ public class MainActivity extends AppCompatActivity {
 
                 String json = "";
 
-                json = "ID= "+ response.body().getId()+
-                        "\n userID= "+ response.body().getUserId()+
-                        "\n title= "+ response.body().getTitle()+
-                        "\n completed= "+ response.body().isCompleted();
-
+                assert response.body() != null;
+                json = "ID= "+ response.body()+
+                        "\n userID= "+ response.body()+
+                        "\n title= "+ response.body()+
+                        "\n body= "+ response.body();
 
                 txt.append(json);
-
-
             }
-
 
             @Override
-            public void onFailure(Call<DataModel> call, Throwable t) {
-
+            public void onFailure(Call<List<DataModel>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Not Logged", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
 }
